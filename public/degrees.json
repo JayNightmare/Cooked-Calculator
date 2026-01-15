@@ -1,0 +1,20 @@
+[
+    { "subject": "Computer Science", "risk": 0.95 },
+    { "subject": "Creative Writing", "risk": 0.9 },
+    { "subject": "Graphic Design", "risk": 0.88 },
+    { "subject": "Data Entry", "risk": 0.99 },
+    { "subject": "Accounting", "risk": 0.85 },
+    { "subject": "Law", "risk": 0.75 },
+    { "subject": "Medicine", "risk": 0.2 },
+    { "subject": "Nursing", "risk": 0.1 },
+    { "subject": "Plumbing", "risk": 0.05 },
+    { "subject": "Electrician", "risk": 0.05 },
+    { "subject": "Psychology", "risk": 0.4 },
+    { "subject": "Business Studies", "risk": 0.7 },
+    { "subject": "Philosophy", "risk": 0.8 },
+    { "subject": "History", "risk": 0.5 },
+    { "subject": "Fine Art", "risk": 0.85 },
+    { "subject": "HR Management", "risk": 0.9 },
+    { "subject": "Marketing", "risk": 0.8 },
+    { "subject": "Interpretive Dance", "risk": 0.15 }
+]
