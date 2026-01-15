@@ -122,33 +122,34 @@ function App() {
             return {
                 name: "Burnt",
                 color: "bg-red-600",
-                text: "You are absolutely cooked. Start learning to weld.",
+                text: "You are absolutely cooked. Start learning to weld",
                 glow: "shadow-[0_0_30px_rgba(220,38,38,0.6)]",
             };
         if (p >= 50)
             return {
                 name: "Well Done",
                 color: "bg-orange-500",
-                text: "It’s looking crispy. Have a backup plan.",
+                text: "It's looking crispy. Have a backup plan",
                 glow: "shadow-[0_0_30px_rgba(249,115,22,0.6)]",
             };
         if (p >= 20)
             return {
                 name: "Medium Rare",
                 color: "bg-yellow-500",
-                text: "Simmering. You might survive with upskilling.",
+                text: "Simmering. You might survive with upskilling",
                 glow: "shadow-[0_0_30px_rgba(234,179,8,0.6)]",
             };
         return {
             name: "Raw",
             color: "bg-green-500",
-            text: "Still raw. You’re safe... for now.",
+            text: "Still raw. You're safe... for now",
             glow: "shadow-[0_0_30px_rgba(34,197,94,0.6)]",
         };
     };
 
     const tier = getTier(percentage);
-    const tierTextColor = tier.color.replace("bg-", "text-");
+    const tierTextShadow = "text-shadow-lg";
+    const tierTextColor = tier.color.replace("bg", "text");
 
     const handleShare = () => {
         const text = `I'm ${percentage}% cooked. ${tier.text} Check your own fate:`;
@@ -170,7 +171,7 @@ function App() {
         <div className="min-h-screen text-gray-100 flex flex-col items-center py-12 px-4 selection:bg-orange-500 selection:text-white overflow-x-hidden">
             <div className="max-w-2xl w-full space-y-10 z-10">
                 <div className="text-center space-y-4">
-                    <h1 className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 drop-shadow-sm tracking-tighter">
+                    <h1 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 drop-shadow-sm tracking-tighter">
                         THE COOKED CALCULATOR
                     </h1>
                     <p className="text-xl text-gray-400 font-light tracking-wide">
@@ -192,7 +193,7 @@ function App() {
                             <div className="relative">
                                 <select
                                     title="Select your degree subject"
-                                    className="w-full bg-slate-900/80 border border-slate-700 rounded-2xl px-5 py-4 text-white text-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all duration-200Appearance-none cursor-pointer hover:bg-slate-800"
+                                    className="w-full bg-slate-900/80 border border-slate-700 rounded-2xl px-5 py-4 text-white text-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all duration-200 appearance-none cursor-pointer hover:bg-slate-800"
                                     onChange={(e) => {
                                         const deg =
                                             degrees.find(
@@ -237,7 +238,7 @@ function App() {
                                 <div className="relative">
                                     <select
                                         title="Select your university grade"
-                                        className="w-full bg-slate-900/80 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all duration-200 cursor-pointer hover:bg-slate-800"
+                                        className="w-full bg-slate-900/80 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all duration-200 cursor-pointer hover:bg-slate-800 appearance-none"
                                         value={grade}
                                         onChange={(e) => {
                                             setGrade(e.target.value as Grade);
@@ -274,7 +275,7 @@ function App() {
                                 <div className="relative">
                                     <select
                                         title="Select your post-grad status"
-                                        className="w-full bg-slate-900/80 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all duration-200 cursor-pointer hover:bg-slate-800"
+                                        className="w-full bg-slate-900/80 border border-slate-700 rounded-2xl px-5 py-4 text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all duration-200 cursor-pointer hover:bg-slate-800 appearance-none"
                                         value={postGrad}
                                         onChange={(e) => {
                                             setPostGrad(
@@ -311,7 +312,9 @@ function App() {
                     )}
 
                     {!isCalculating && showResult && selectedDegree && (
-                        <div className="bg-slate-800 p-8 rounded-3xl shadow-2xl border border-slate-700/50 text-center space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700 relative overflow-hidden group">
+                        <div
+                            className={`bg-slate-800 p-8 rounded-3xl shadow-2xl border border-slate-700/50 text-center space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700 relative overflow-hidden group ${tier.glow}`}
+                        >
                             {/* Glow Effect */}
                             <div
                                 className={`absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 ${tier.color} opacity-20 blur-[60px] pointer-events-none transition-all duration-1000`}
@@ -322,7 +325,7 @@ function App() {
                                     Cooked Score
                                 </h2>
                                 <div
-                                    className={`text-8xl font-black text-white tracking-tighter drop-shadow-lg ${tier.glow}`}
+                                    className={`text-8xl font-black text-white tracking-tighter drop-shadow-lg ${tierTextShadow}`}
                                 >
                                     {percentage}%
                                 </div>
@@ -339,6 +342,76 @@ function App() {
                                     className={`h-full rounded-full transition-all duration-1500 cubic-bezier(0.4, 0, 0.2, 1) ${tier.color} shadow-[0_0_15px_rgba(255,255,255,0.3)]`}
                                     style={{ width: `${percentage}%` }}
                                 />
+                            </div>
+
+                            {/* Breakdown Stats */}
+                            <div className="grid grid-cols-2 gap-4 text-left">
+                                <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">
+                                        AI Exposure
+                                    </div>
+                                    <div className="text-lg font-bold text-white mb-2">
+                                        {Math.round(
+                                            selectedDegree.aiExposure * 100
+                                        )}
+                                        %
+                                    </div>
+                                    <div className="w-full bg-slate-800 rounded-full h-1.5">
+                                        <div
+                                            className="bg-red-500 h-1.5 rounded-full"
+                                            style={{
+                                                width: `${
+                                                    selectedDegree.aiExposure *
+                                                    100
+                                                }%`,
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">
+                                        Employment
+                                    </div>
+                                    <div className="text-lg font-bold text-white">
+                                        {Math.round(
+                                            selectedDegree.employmentRate * 100
+                                        )}
+                                        %
+                                    </div>
+                                    <div className="text-xs text-gray-400">
+                                        Grads in work
+                                    </div>
+                                </div>
+                                <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">
+                                        Avg Salary
+                                    </div>
+                                    <div className="text-lg font-bold text-green-400">
+                                        £{selectedDegree.startingSalary}k
+                                    </div>
+                                    <div className="text-xs text-gray-400">
+                                        Entry level
+                                    </div>
+                                </div>
+                                <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">
+                                        Market
+                                    </div>
+                                    <div
+                                        className={`text-lg font-bold ${
+                                            selectedDegree.saturation > 0.7
+                                                ? "text-red-400"
+                                                : "text-blue-400"
+                                        }`}
+                                    >
+                                        {selectedDegree.saturation > 0.7
+                                            ? "Oversaturated"
+                                            : "Stable"}
+                                    </div>
+                                    <div className="text-xs text-gray-400">
+                                        Competition
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Quote & Pivot */}
@@ -373,6 +446,53 @@ function App() {
                         </div>
                     )}
                 </div>
+
+                {/* Methodology Section */}
+                {!isCalculating && showResult && (
+                    <div className="mt-8 bg-slate-900/40 p-6 rounded-3xl border border-slate-700/30 text-left space-y-4 max-w-2xl mx-auto">
+                        <h3 className="text-gray-400 font-medium uppercase tracking-widest text-xs flex items-center gap-2">
+                            <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+                            Methodology & Sources
+                        </h3>
+                        <div className="space-y-3 text-sm text-gray-400 leading-relaxed">
+                            <p>
+                                <strong className="text-gray-300">
+                                    Data Sources:
+                                </strong>{" "}
+                                Employment rates based on HESA Graduate Outcomes
+                                (2022/23). Salaries derived from ONS & Glassdoor
+                                entry-level averages. AI exposure risk
+                                aggregated from recent economic impact reports.
+                            </p>
+                            <p>
+                                <strong className="text-gray-300">
+                                    The Algorithm:
+                                </strong>
+                                <br />•{" "}
+                                <span className="text-orange-400">
+                                    AI Exposure (45%)
+                                </span>
+                                : How likely chatbots are to steal your lunch.
+                                <br />•{" "}
+                                <span className="text-blue-400">
+                                    Employment (High Weight)
+                                </span>
+                                : If 40% of grads are jobless, you're heavily
+                                cooked.
+                                <br />•{" "}
+                                <span className="text-green-400">
+                                    Salary Buffer
+                                </span>
+                                : Earn enough to build a bunker? Score reduces.
+                            </p>
+                            <p className="text-xs opacity-50 italic pt-2">
+                                * This is a satirical tool. Please do not base
+                                life decisions on a website with a "Medium Rare"
+                                status.
+                            </p>
+                        </div>
+                    </div>
+                )}
 
                 <footer className="text-center text-gray-600 text-sm pt-12 pb-6">
                     Made with anxiety and React. Not financial or life advice.

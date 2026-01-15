@@ -2,87 +2,163 @@
     {
         "subject": "Computer Science",
         "risk": 0.95,
-        "careerPivot": "Learn to fix the robots that replace you."
+        "aiExposure": 0.95,
+        "employmentRate": 0.9,
+        "startingSalary": 32,
+        "saturation": 0.85,
+        "careerPivot": "Learn to fix the robots that replace you"
     },
     {
         "subject": "Creative Writing",
         "risk": 0.9,
-        "careerPivot": "Write prompt engineering guides."
+        "aiExposure": 0.92,
+        "employmentRate": 0.65,
+        "startingSalary": 21,
+        "saturation": 0.9,
+        "careerPivot": "Write prompt engineering guides"
     },
     {
         "subject": "Graphic Design",
         "risk": 0.88,
-        "careerPivot": "Train image generation models."
+        "aiExposure": 0.99,
+        "employmentRate": 0.75,
+        "startingSalary": 23,
+        "saturation": 0.95,
+        "careerPivot": "Train image generation models"
     },
     {
         "subject": "Data Entry",
         "risk": 0.99,
-        "careerPivot": "Too late. It’s already gone."
+        "aiExposure": 1.0,
+        "employmentRate": 0.4,
+        "startingSalary": 18,
+        "saturation": 0.2,
+        "careerPivot": "Too late. It’s already gone"
     },
     {
         "subject": "Accounting",
         "risk": 0.85,
-        "careerPivot": "Only crime pays now."
+        "aiExposure": 0.75,
+        "employmentRate": 0.92,
+        "startingSalary": 30,
+        "saturation": 0.6,
+        "careerPivot": "Only crime pays now"
     },
-    { "subject": "Law", "risk": 0.75, "careerPivot": "Argue with AI judges." },
+    {
+        "subject": "Law",
+        "risk": 0.75,
+        "aiExposure": 0.8,
+        "employmentRate": 0.88,
+        "startingSalary": 35,
+        "saturation": 0.7,
+        "careerPivot": "Argue with AI judges"
+    },
     {
         "subject": "Medicine",
         "risk": 0.2,
-        "careerPivot": "Bedside manner is still premium."
+        "aiExposure": 0.15,
+        "employmentRate": 0.99,
+        "startingSalary": 34,
+        "saturation": 0.1,
+        "careerPivot": "Bedside manner is still premium"
     },
     {
         "subject": "Nursing",
         "risk": 0.1,
-        "careerPivot": "Robots can't clean bedpans... yet."
+        "aiExposure": 0.1,
+        "employmentRate": 0.98,
+        "startingSalary": 28,
+        "saturation": 0.05,
+        "careerPivot": "Robots can't clean bedpans... yet"
     },
     {
         "subject": "Plumbing",
         "risk": 0.05,
-        "careerPivot": "You are the king of the wasteland."
+        "aiExposure": 0.01,
+        "employmentRate": 0.96,
+        "startingSalary": 30,
+        "saturation": 0.1,
+        "careerPivot": "You are the king of the wasteland"
     },
     {
         "subject": "Electrician",
         "risk": 0.05,
-        "careerPivot": "Keep the servers running for our overlords."
+        "aiExposure": 0.02,
+        "employmentRate": 0.95,
+        "startingSalary": 32,
+        "saturation": 0.15,
+        "careerPivot": "Keep the servers running for our overlords"
     },
     {
         "subject": "Psychology",
         "risk": 0.4,
-        "careerPivot": "Treat the AI's hallucinations."
+        "aiExposure": 0.35,
+        "employmentRate": 0.78,
+        "startingSalary": 24,
+        "saturation": 0.8,
+        "careerPivot": "Treat the AI's hallucinations"
     },
     {
         "subject": "Business Studies",
         "risk": 0.7,
-        "careerPivot": "Manage a team of agents."
+        "aiExposure": 0.6,
+        "employmentRate": 0.85,
+        "startingSalary": 26,
+        "saturation": 0.9,
+        "careerPivot": "Manage a team of agents"
     },
     {
         "subject": "Philosophy",
         "risk": 0.8,
-        "careerPivot": "Debate ethics with ChatGPT."
+        "aiExposure": 0.85,
+        "employmentRate": 0.6,
+        "startingSalary": 22,
+        "saturation": 0.6,
+        "careerPivot": "Debate ethics with ChatGPT"
     },
     {
         "subject": "History",
         "risk": 0.5,
-        "careerPivot": "Archive the Before Times."
+        "aiExposure": 0.5,
+        "employmentRate": 0.7,
+        "startingSalary": 23,
+        "saturation": 0.7,
+        "careerPivot": "Archive the Before Times"
     },
     {
         "subject": "Fine Art",
         "risk": 0.85,
-        "careerPivot": "Make physical NFTs."
+        "aiExposure": 0.9,
+        "employmentRate": 0.55,
+        "startingSalary": 20,
+        "saturation": 0.8,
+        "careerPivot": "Make physical NFTs"
     },
     {
         "subject": "HR Management",
         "risk": 0.9,
-        "careerPivot": "Human-in-the-loop verification."
+        "aiExposure": 0.7,
+        "employmentRate": 0.82,
+        "startingSalary": 27,
+        "saturation": 0.6,
+        "careerPivot": "Human-in-the-loop verification"
     },
     {
         "subject": "Marketing",
         "risk": 0.8,
-        "careerPivot": "Design ads for bots."
+        "aiExposure": 0.95,
+        "employmentRate": 0.8,
+        "startingSalary": 25,
+        "saturation": 0.9,
+        "careerPivot": "Design ads for bots"
     },
     {
         "subject": "Interpretive Dance",
         "risk": 0.15,
-        "careerPivot": "Entertain the idle masses."
+        "aiExposure": 0.05,
+        "employmentRate": 0.3,
+        "startingSalary": 16,
+        "saturation": 0.99,
+        "careerPivot": "Entertain the idle masses"
     }
 ]
