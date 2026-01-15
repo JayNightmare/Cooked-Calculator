@@ -3,6 +3,7 @@ import { useMemo } from "react";
 export interface Degree {
     subject: string;
     risk: number;
+    careerPivot: string;
 }
 
 export type Grade = "First" | "2:1" | "2:2" | "Third";
